@@ -1,8 +1,9 @@
 import "./index.html";
 import "./index.scss";
-import data from "./modules/test";
+import { Select } from "./modules/select.js";
 
-const mult = (a, b) => a * b;
-console.log(mult(5, 15));
-console.log(mult(5, 150));
-console.log(data?.console);
+const select = new Select("#select", {});
+
+// верстка на div ах, посколько нам обычный select не подходит
+
+// DropDown позиционируем абсолютно относительно .Select

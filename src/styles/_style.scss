@@ -1,13 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 body {
-  font-family: "Montserrat";
-  background: beige;
-  color: $text;
-  user-select: none;
+  font-family: "Roboto", sans-serif;
+}
+.app {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-.image {
-  width: 300px;
-  height: 500px;
-  background-size: cover;
-  background: url(./images/service-industrial.png) no-repeat;
+.wrap {
+  width: 500px;
+}
+
+.select {
+  width: 100%;
+  position: relative;
+
+  &.open {
+    .select__dropdown {
+      display: block;
+    }
+    .select__input {
+      border-bottom: none;
+    }
+  }
+  &__input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: $height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+  &__input-img {
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+  &__dropdown {
+    display: none;
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    top: $height;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+  }
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  &__item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    transition: 0.15s background-color ease-in;
+    &:hover {
+      background-color: #eee;
+      cursor: pointer;
+    }
+  }
 }
