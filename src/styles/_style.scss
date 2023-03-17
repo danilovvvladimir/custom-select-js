@@ -1,0 +1,13 @@
+body {
+  font-family: "Montserrat";
+  background: beige;
+  color: $text;
+  user-select: none;
+}
+
+.image {
+  width: 300px;
+  height: 500px;
+  background-size: cover;
+  background: url(./images/service-industrial.png) no-repeat;
+}
