@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+$height: 46px;
 
 body {
   font-family: "Roboto", sans-serif;
@@ -16,6 +17,7 @@ body {
 .select {
   width: 100%;
   position: relative;
+  z-index: 100;
 
   &.open {
     .select__dropdown {
@@ -24,9 +26,16 @@ body {
     .select__input {
       border-bottom: none;
     }
+    .select__input svg {
+      rotate: 180deg;
+    }
+    .select__backdrop {
+      display: block;
+    }
   }
   &__input {
     border: 1px solid #ccc;
+    background-color: #fff;
     border-radius: 5px;
     height: $height;
     display: flex;
@@ -64,12 +73,26 @@ body {
     list-style: none;
   }
   &__item {
+    background-color: #fff;
     padding: 10px;
     border-bottom: 1px solid #ccc;
     transition: 0.15s background-color ease-in;
+    &.selected {
+      background-color: #cecccc;
+    }
     &:hover {
       background-color: #eee;
       cursor: pointer;
     }
+  }
+  &__backdrop {
+    position: fixed;
+    z-index: -1;
+    display: none;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: transparent;
   }
 }
